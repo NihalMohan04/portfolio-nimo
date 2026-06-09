@@ -4,7 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowUpRight, FileText } from "lucide-react";
 
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { MagneticText } from "@/components/shared/magnetic-text";
 import { ScrollCue } from "@/components/shared/scroll-cue";
 import { StackMarquee } from "@/components/shared/stack-marquee";
@@ -98,10 +98,10 @@ export function Hero() {
             <FileText aria-hidden className="size-3.5" />
             View resume
           </Link>
-          <Button size="sm" render={<Link href="#contact" />}>
+          <Link href="#contact" className={buttonVariants({ size: "sm" })}>
             Get in touch
             <ArrowUpRight aria-hidden className="size-3.5" />
-          </Button>
+          </Link>
         </motion.div>
       </div>
 
