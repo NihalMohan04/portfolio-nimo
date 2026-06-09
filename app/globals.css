@@ -112,6 +112,14 @@
   }
 }
 
+/* Custom cursor: hide native cursor on fine-pointer devices */
+@media (hover: hover) and (pointer: fine) {
+  .custom-cursor,
+  .custom-cursor * {
+    cursor: none !important;
+  }
+}
+
 @layer utilities {
   .bg-grid {
     background-image: radial-gradient(
@@ -141,6 +149,26 @@
       0 0 0 1px oklch(1 0 0 / 4%),
       0 0 32px -8px oklch(0.92 0.24 128 / 0.25);
   }
+}
+
+/* Custom cursor: dot + ring states */
+.cursor-ring[data-hover="true"] {
+  width: 3rem;
+  height: 3rem;
+  background-color: oklch(0.92 0.24 128 / 0.08);
+  border-color: oklch(0.92 0.24 128 / 0.9);
+  box-shadow: 0 0 24px -2px oklch(0.92 0.24 128 / 0.5);
+}
+.cursor-ring[data-press="true"] {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+.cursor-dot[data-hover="true"] {
+  opacity: 0;
+}
+.cursor-dot[data-press="true"] {
+  width: 0.5rem;
+  height: 0.5rem;
 }
 
 @keyframes cursor-blink {
