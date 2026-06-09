@@ -1,3 +1,5 @@
+import { TypeOnView } from "@/components/shared/type-on-view";
+
 type Props = {
   label: string;
   index?: string;
@@ -13,8 +15,7 @@ export function SectionHeading({ label, index, description }: Props) {
         </span>
       ) : null}
       <h2 className="font-mono text-sm text-primary sm:text-base">
-        <span className="text-muted-foreground">{"// "}</span>
-        {label}
+        <TypeOnView text={`// ${label}`} className="text-muted-foreground" />
       </h2>
       <span
         aria-hidden
