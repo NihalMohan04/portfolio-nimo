@@ -171,6 +171,91 @@
   height: 0.5rem;
 }
 
+/* Boot sequence overlay */
+.boot-overlay {
+  opacity: 1;
+  transition: opacity 400ms ease-out;
+  background-color: #000;
+  background-image: radial-gradient(
+    circle,
+    oklch(1 0 0 / 0.05) 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
+}
+.boot-overlay[data-fading="true"] {
+  opacity: 0;
+  pointer-events: none;
+}
+.boot-line {
+  opacity: 0;
+  animation: boot-line-in 140ms ease-out forwards;
+}
+.boot-line[data-kind="ok"] {
+  color: oklch(0.92 0.24 128);
+}
+.boot-cursor {
+  animation: cursor-blink 1s step-end infinite;
+}
+.boot-line--ok {
+  color: oklch(0.92 0.24 128);
+}
+.boot-tag {
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+  color: oklch(0.66 0 0);
+}
+.boot-tag--ok {
+  color: oklch(0.92 0.24 128);
+}
+.boot-letter {
+  display: inline-block;
+  min-width: 0.6em;
+  text-align: center;
+}
+.boot-letter--glitch {
+  color: oklch(0.66 0 0);
+  animation: boot-letter-glitch 80ms steps(2) infinite;
+}
+.boot-letter--resolved {
+  color: oklch(0.92 0.24 128);
+  text-shadow: 0 0 24px oklch(0.92 0.24 128 / 0.6);
+  transition: text-shadow 200ms ease-out;
+}
+@keyframes boot-line-in {
+  from {
+    opacity: 0;
+    transform: translateX(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes boot-letter-glitch {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(1px, -1px);
+  }
+  100% {
+    transform: translate(-1px, 1px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .boot-line {
+    animation: none;
+    opacity: 1;
+  }
+  .boot-overlay {
+    transition: none;
+  }
+  .boot-letter--glitch {
+    animation: none;
+  }
+}
+
 @keyframes cursor-blink {
   0%,
   50% {
