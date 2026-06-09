@@ -61,7 +61,7 @@ function getVariant(): Variant {
   return "progress";
 }
 
-export function BootSequence() {
+export function BootSequence({ onDone }: { onDone?: () => void } = {}) {
   const [visible, setVisible] = useState<boolean>(shouldShow);
   const [fadingOut, setFadingOut] = useState(false);
   const [variant] = useState<Variant>(getVariant);
@@ -80,7 +80,10 @@ export function BootSequence() {
           }, i * SYSTEMD_STEP_MS + 80),
         );
       }
-      const fadeTimer = setTimeout(() => setFadingOut(true), SYSTEMD_FADE_OUT_START_AT);
+      const fadeTimer = setTimeout(() => {
+        setFadingOut(true);
+        onDone?.();
+      }, SYSTEMD_FADE_OUT_START_AT);
       const hideTimer = setTimeout(() => setVisible(false), SYSTEMD_TOTAL_MS);
       return () => {
         stepTimers.forEach(clearTimeout);
@@ -98,7 +101,10 @@ export function BootSequence() {
         if (t < 1) raf = requestAnimationFrame(tick);
       };
       raf = requestAnimationFrame(tick);
-      const fadeTimer = setTimeout(() => setFadingOut(true), FADE_OUT_START_AT);
+      const fadeTimer = setTimeout(() => {
+        setFadingOut(true);
+        onDone?.();
+      }, FADE_OUT_START_AT);
       const hideTimer = setTimeout(() => setVisible(false), TOTAL_MS);
       return () => {
         cancelAnimationFrame(raf);
@@ -114,14 +120,17 @@ export function BootSequence() {
       () => setShownCount(DECRYPT_WORD.length + 1),
       allResolveAt,
     );
-    const fadeTimer = setTimeout(() => setFadingOut(true), FADE_OUT_START_AT);
+    const fadeTimer = setTimeout(() => {
+      setFadingOut(true);
+      onDone?.();
+    }, FADE_OUT_START_AT);
     const hideTimer = setTimeout(() => setVisible(false), TOTAL_MS);
     return () => {
       clearTimeout(resolvedTimer);
       clearTimeout(fadeTimer);
       clearTimeout(hideTimer);
     };
-  }, [visible, variant]);
+  }, [visible, variant, onDone]);
 
   if (!visible) return null;
 
