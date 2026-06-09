@@ -1,21 +1,37 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 
 const INTERACTIVE_SELECTOR =
   'a, button, [role="button"], input, textarea, select, label, [data-cursor="hover"]';
 
-function detectEnabled(): boolean {
+function subscribePointer(onChange: () => void): () => void {
+  if (typeof window === "undefined") return () => {};
+  const mql = window.matchMedia("(hover: hover) and (pointer: fine)");
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+  mql.addEventListener("change", onChange);
+  reduced.addEventListener("change", onChange);
+  return () => {
+    mql.removeEventListener("change", onChange);
+    reduced.removeEventListener("change", onChange);
+  };
+}
+
+function computeSnapshot(): boolean {
   if (typeof window === "undefined") return false;
   const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   return finePointer && !reducedMotion;
 }
 
+function getServerSnapshot(): boolean {
+  return false;
+}
+
 export function Cursor() {
   const dotRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
-  const [enabled] = useState<boolean>(detectEnabled);
+  const enabled = useSyncExternalStore(subscribePointer, computeSnapshot, getServerSnapshot);
   const [hovering, setHovering] = useState(false);
   const [pressing, setPressing] = useState(false);
 
