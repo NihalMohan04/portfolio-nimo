@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 import { site } from "@/lib/data/site";
 import { profile } from "@/lib/data/profile";
 import { buttonVariants } from "@/components/ui/button";
+import { SmoothScrollLink } from "@/components/shared/smooth-scroll-link";
 
 const SECTION_IDS = ["about", "experience", "stack", "contact"] as const;
 type SectionId = (typeof SECTION_IDS)[number];
@@ -75,7 +76,7 @@ export function SiteNav() {
         )}
       >
         <div className="mx-auto flex h-14 w-full max-w-5xl items-center justify-between gap-4 px-6">
-          <Link
+          <SmoothScrollLink
             href="#top"
             className="group inline-flex items-center gap-1.5 font-mono text-sm"
           >
@@ -87,7 +88,7 @@ export function SiteNav() {
               aria-hidden
               className="ml-0.5 inline-block h-3.5 w-1.5 bg-primary align-middle animate-cursor"
             />
-          </Link>
+          </SmoothScrollLink>
 
           <nav
             aria-label="Primary"
