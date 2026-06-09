@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { Separator } from "@/components/ui/separator";
+import { SmoothScrollLink } from "@/components/shared/smooth-scroll-link";
 import { profile } from "@/lib/data/profile";
 
 export function SiteFooter() {
@@ -33,12 +34,12 @@ export function SiteFooter() {
             linkedin
           </Link>
           <Separator orientation="vertical" className="h-3" />
-          <Link
+          <SmoothScrollLink
             href="#top"
             className="transition-colors hover:text-primary"
           >
             ↑ top
-          </Link>
+          </SmoothScrollLink>
         </div>
       </div>
     </footer>

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { BootSequence } from "@/components/shared/boot-sequence";
+import { Cursor } from "@/components/shared/cursor";
 import { ScrollProgress } from "@/components/shared/scroll-progress";
 import { SiteFooter } from "@/components/shared/site-footer";
 import { SiteNav } from "@/components/shared/site-nav";
@@ -42,10 +44,12 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${jetbrainsMono.variable} dark h-full antialiased`}
     >
-      <body className="min-h-full bg-background font-sans text-foreground">
+      <body className="custom-cursor min-h-full bg-background font-sans text-foreground">
         <div className="bg-grid bg-grid-mask pointer-events-none fixed inset-0 -z-10" />
+        <BootSequence />
         <ScrollProgress />
         <SiteNav />
+        <Cursor />
         <div className="flex min-h-svh flex-col">
           <main className="flex-1">{children}</main>
           <SiteFooter />
