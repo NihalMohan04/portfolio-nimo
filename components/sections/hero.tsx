@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, FileText } from "lucide-react";
 
 import { Button, buttonVariants } from "@/components/ui/button";
+import { MagneticText } from "@/components/shared/magnetic-text";
 import { ScrollCue } from "@/components/shared/scroll-cue";
 import { StackMarquee } from "@/components/shared/stack-marquee";
 import { StatusBadge } from "@/components/shared/status-badge";
@@ -48,7 +49,9 @@ export function Hero() {
           custom={0.25}
           className="mt-10 text-4xl font-semibold leading-[1.05] tracking-tight text-foreground sm:text-6xl lg:text-7xl"
         >
-          <span className="text-glow text-primary">{profile.handle}</span>
+          <span className="text-glow text-primary">
+            <MagneticText text={profile.handle} />
+          </span>
           <span className="text-muted-foreground"> / </span>
           <span className="text-pretty">{profile.name}</span>
         </motion.h1>
