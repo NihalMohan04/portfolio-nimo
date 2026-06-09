@@ -47,9 +47,9 @@ export default function RootLayout({
       <body className="custom-cursor min-h-full bg-background font-sans text-foreground">
         <div className="bg-grid bg-grid-mask pointer-events-none fixed inset-0 -z-10" />
         <ScrollProgress />
+        <Cursor />
         <BootGate>
           <SiteNav />
-          <Cursor />
           <div className="flex min-h-svh flex-col">
             <main className="flex-1">{children}</main>
             <SiteFooter />
