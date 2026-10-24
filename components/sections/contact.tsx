@@ -36,7 +36,7 @@ export function Contact() {
       <div className="mx-auto w-full max-w-4xl px-6">
         <SectionHeading
           label="contact"
-          index="05"
+          index="06"
           description="let's build something"
         />
 

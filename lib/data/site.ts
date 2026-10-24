@@ -8,6 +8,7 @@ export const site = {
   nav: [
     { label: "About", href: "#about" },
     { label: "Experience", href: "#experience" },
+    { label: "Projects", href: "#projects" },
     { label: "Stack", href: "#stack" },
     { label: "Freetime", href: "#freetime" },
     { label: "Contact", href: "#contact" },

@@ -29,7 +29,7 @@ export function Freetime() {
       <div className="mx-auto w-full max-w-4xl px-6">
         <SectionHeading
           label="freetime"
-          index="04"
+          index="05"
           description="what I practice off the clock"
         />
 
