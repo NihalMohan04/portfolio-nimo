@@ -26,6 +26,11 @@ export const profile: Profile = {
       handle: "in/nihal-mohan-shettigar",
     },
     {
+      label: "Instagram",
+      href: "https://instagram.com/__findingnimo",
+      handle: "@__findingnimo",
+    },
+    {
       label: "Email",
       href: "mailto:nihalmohan46@gmail.com",
       handle: "nihalmohan46@gmail.com",

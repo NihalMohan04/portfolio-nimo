@@ -34,6 +34,17 @@ export function SiteFooter() {
             linkedin
           </Link>
           <Separator orientation="vertical" className="h-3" />
+          <Link
+            href={
+              profile.socials.find((s) => s.label === "Instagram")?.href ?? "#"
+            }
+            target="_blank"
+            rel="noreferrer"
+            className="transition-colors hover:text-primary"
+          >
+            instagram
+          </Link>
+          <Separator orientation="vertical" className="h-3" />
           <SmoothScrollLink
             href="#top"
             className="transition-colors hover:text-primary"
