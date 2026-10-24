@@ -1,8 +1,28 @@
 "use client";
 
+import { useEffect } from "react";
 import { Moon, Sun } from "lucide-react";
 
+function savedTheme(): string | null {
+  try {
+    return localStorage.getItem("theme");
+  } catch {
+    return null;
+  }
+}
+
 export function ThemeToggle() {
+  // With no saved choice, follow the system setting as it changes.
+  useEffect(() => {
+    const query = window.matchMedia("(prefers-color-scheme: dark)");
+    const onChange = () => {
+      if (savedTheme()) return;
+      document.documentElement.classList.toggle("dark", query.matches);
+    };
+    query.addEventListener("change", onChange);
+    return () => query.removeEventListener("change", onChange);
+  }, []);
+
   const toggle = () => {
     const root = document.documentElement;
     const next = root.classList.contains("dark") ? "light" : "dark";

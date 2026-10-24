@@ -49,7 +49,7 @@ export default function RootLayout({
       <body className="custom-cursor min-h-full bg-background font-sans text-foreground">
         <script
           dangerouslySetInnerHTML={{
-            __html: `try{document.documentElement.classList.toggle("dark",localStorage.getItem("theme")!=="light")}catch(e){}`,
+            __html: `try{var t=null;try{t=localStorage.getItem("theme")}catch(e){}document.documentElement.classList.toggle("dark",t==="dark"||(t!=="light"&&matchMedia("(prefers-color-scheme: dark)").matches))}catch(e){}`,
           }}
         />
         <ThemedFlickeringGrid
