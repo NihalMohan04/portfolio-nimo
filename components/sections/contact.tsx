@@ -61,10 +61,10 @@ export function Contact() {
 
           <div className="space-y-8 p-6 sm:p-8">
             <motion.div variants={inView}>
-              <p className="font-mono text-xs text-muted-foreground">
+              <p className="text-center font-mono text-xs text-muted-foreground">
                 {"// the fastest way to reach me"}
               </p>
-              <div className="mt-3 flex flex-wrap items-center gap-3">
+              <div className="mt-3 flex flex-wrap items-center justify-center gap-3">
                 <a
                   href={`mailto:${profile.email}`}
                   className="group inline-flex min-w-0 items-center gap-2 rounded-md border border-border bg-background/50 px-3 py-2 font-mono text-sm text-foreground transition-all hover:border-primary/60 hover:bg-primary/5 hover:text-primary"
@@ -90,10 +90,10 @@ export function Contact() {
 
             <motion.ul
               variants={inView}
-              className="grid gap-3 sm:grid-cols-2"
+              className="flex flex-wrap justify-center gap-3"
             >
               {externalSocials.map((social) => (
-                <li key={social.label}>
+                <li key={social.label} className="w-full sm:w-[calc(50%-0.375rem)]">
                   <Link
                     href={social.href}
                     target="_blank"
