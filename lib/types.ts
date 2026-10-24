@@ -48,3 +48,9 @@ export type NavItem = {
   label: string;
   href: string;
 };
+
+export type FreetimeItem = {
+  title: string;
+  status: string;
+  description: string;
+};

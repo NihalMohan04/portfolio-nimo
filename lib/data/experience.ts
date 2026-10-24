@@ -2,35 +2,6 @@ import type { Experience } from "@/lib/types";
 
 export const experience: Experience[] = [
   {
-    company: "LatSpace",
-    role: "Founding Engineer (Part-time)",
-    location: "Remote",
-    period: "Nov 2025 – Present",
-    current: true,
-    workMode: "part-time",
-    highlights: [
-      "Architected core backend services for an AI-native ESG compliance platform using FastAPI, async Python, and MongoDB with Beanie ODM (CBAM and CCTS regulatory workflows).",
-      "Designed LangGraph-based AI agent systems with modular node architecture and Pydantic v2-validated structured LLM outputs.",
-      "Built Bifrost — a multi-provider LLM gateway abstracting OpenAI, Anthropic, and AWS Bedrock for unified model routing.",
-      "Developed the Next.js 16 frontend with React 19 Server/Client Components, TanStack Query v5, and Zustand, strict TypeScript end-to-end.",
-      "Set up Docker Compose across 5 microservices, multi-stage Dockerfiles, and AWS infra (EC2, S3, IAM) with multi-AZ failover and SOC 2 compliance.",
-      "Enforced quality gates: 66% test coverage in CI, Ruff, Mypy strict, pre-commit hooks.",
-    ],
-    stack: [
-      "FastAPI",
-      "LangGraph",
-      "MongoDB",
-      "Beanie",
-      "Next.js 16",
-      "React 19",
-      "TypeScript",
-      "TanStack Query",
-      "Zustand",
-      "Docker",
-      "AWS",
-    ],
-  },
-  {
     company: "Cognizant Technology Solutions",
     role: "Programmer Analyst",
     location: "Chennai, India",

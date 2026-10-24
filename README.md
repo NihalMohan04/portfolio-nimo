@@ -29,7 +29,7 @@ Here's everything that went into building this thing. If you're a fellow dev, th
 
 ### State / data
 - This is the part I'm a little proud of. There is **no global state library**. All content — your name, your bio, every experience entry, every skill chip, every social link — lives in plain typed data files under `lib/data/`. Want to change a paragraph? Edit a `.ts` file. No CMS, no MDX, no YAML, no headless backend.
-- (Quick aside: TanStack Query and Zustand show up on my resume for work I do at LatSpace, but they have no business in a portfolio this small. Don't add libraries to look impressive.)
+- (Quick aside: TanStack Query and Zustand show up on my resume, but they have no business in a portfolio this small. Don't add libraries to look impressive.)
 
 ### Tooling
 - **ESLint 9** with `eslint-config-next`
@@ -151,7 +151,7 @@ That's it. Have fun.
 
 ## About me
 
-**Nihal Mohan Shettigar** — Chennai, originally from Mangalore, working part-time as Founding Engineer at LatSpace (Bengaluru-based) and full-time at Cognizant.
+**Nihal Mohan Shettigar** — Chennai, originally from Mangalore, working full-time at Cognizant.
 
 - GitHub: [@NihalMohan04](https://github.com/NihalMohan04)
 - LinkedIn: [/in/nihal-mohan-shettigar](https://linkedin.com/in/nihal-mohan-shettigar)
