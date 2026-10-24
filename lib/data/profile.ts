@@ -6,7 +6,7 @@ export const profile: Profile = {
   initials: "NS",
   role: "Python Engineer",
   tagline:
-    "Python engineer building AI-native platforms and enterprise automation. I architect LangGraph agents, async backends, and Next.js frontends — and I like my code typed end-to-end.",
+    "Python engineer building AI-native backends and agent systems. I ship fast with AI coding tools, and keep it honest with strict types, tests, and code review.",
   location: "Chennai, India",
   email: "nihalmohan46@gmail.com",
   resumeUrl: "/resume/Nihal_Mohan_Shettigar_Resume.pdf",
@@ -26,6 +26,11 @@ export const profile: Profile = {
       handle: "in/nihal-mohan-shettigar",
     },
     {
+      label: "Instagram",
+      href: "https://instagram.com/__findingnimo",
+      handle: "@__findingnimo",
+    },
+    {
       label: "Email",
       href: "mailto:nihalmohan46@gmail.com",
       handle: "nihalmohan46@gmail.com",
@@ -38,15 +43,13 @@ export const profile: Profile = {
   ],
   currently: [
     "Programmer Analyst (full-time) @ Cognizant",
-    "Learning Rust in small doses",
   ],
   facts: [
     { label: "based in", value: "Chennai, IN" },
     { label: "originally from", value: "Mangalore, IN" },
     { label: "timezone", value: "IST (UTC+5:30)" },
     { label: "education", value: "BE AI/ML · NMAMIT · 7.98" },
-    { label: "coffee/day", value: "2-3 cups, black" },
-    { label: "editor", value: "Neovim + Claude Code" },
+    { label: "editor", value: "Zed + Claude Code" },
     { label: "shell", value: "zsh, fish on weekends" },
   ],
 };

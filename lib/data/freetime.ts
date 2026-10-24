@@ -1,16 +1,22 @@
 import type { FreetimeItem } from "@/lib/types";
 
-// Seed content only — edit freely.
 export const freetime: FreetimeItem[] = [
   {
-    title: "Rust",
-    status: "learning",
-    description: "Picking it up in small doses, one small program at a time.",
+    title: "Reading tech articles",
+    status: "daily",
+    description:
+      "Engineering blogs, release notes, and write-ups on how other people build and break things.",
   },
   {
-    title: "Terminal tinkering",
+    title: "Experimenting with automations",
     status: "ongoing",
     description:
-      "Neovim, zsh (and fish on weekends), and a dotfiles setup that never quite stops changing.",
+      "Small scripts and workflows that take repetitive chores off my plate.",
+  },
+  {
+    title: "Remote access",
+    status: "tinkering",
+    description:
+      "Figuring out how to reach my machines and services from anywhere, safely.",
   },
 ];
