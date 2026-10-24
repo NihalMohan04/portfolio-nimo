@@ -10,6 +10,7 @@ import { site } from "@/lib/data/site";
 import { profile } from "@/lib/data/profile";
 import { buttonVariants } from "@/components/ui/button";
 import { SmoothScrollLink } from "@/components/shared/smooth-scroll-link";
+import { ThemeToggle } from "@/components/shared/theme-toggle";
 
 const SECTION_IDS = ["about", "experience", "projects", "stack", "freetime", "contact"] as const;
 type SectionId = (typeof SECTION_IDS)[number];
@@ -61,18 +62,11 @@ export function SiteNav() {
     <AnimatePresence>
       <motion.header
         initial={false}
-        animate={{
-          backgroundColor: scrolled
-            ? "oklch(0.1 0 0 / 0.75)"
-            : "oklch(0.1 0 0 / 0)",
-          borderColor: scrolled
-            ? "oklch(1 0 0 / 8%)"
-            : "oklch(1 0 0 / 0%)",
-        }}
-        transition={{ duration: 0.25, ease: "easeOut" }}
         className={cn(
-          "fixed inset-x-0 top-0 z-50 border-b backdrop-blur",
-          scrolled ? "supports-[backdrop-filter]:bg-background/60" : "",
+          "fixed inset-x-0 top-0 z-50 border-b backdrop-blur transition-colors duration-300",
+          scrolled
+            ? "border-border bg-background/75"
+            : "border-transparent bg-transparent",
         )}
       >
         <div className="mx-auto flex h-14 w-full max-w-5xl items-center justify-between gap-4 px-6">
@@ -114,6 +108,7 @@ export function SiteNav() {
                 </Link>
               );
             })}
+            <ThemeToggle />
             <Link
               href="#contact"
               className={cn(
