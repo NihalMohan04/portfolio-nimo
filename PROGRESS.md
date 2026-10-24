@@ -33,7 +33,7 @@ Sections: Hero → About → Experience → Skills → Contact
   - Built shared `components/shared/section-heading.tsx` (`[01] // about ──────── who is this guy`).
   - `components/sections/about.tsx`: 3 bio paragraphs (from `profile.about`) on the left; right column has a "currently" card (▸ list) + a "system info" dl-table of facts. whileInView stagger reveal.
   - Wired into `app/page.tsx` (Hero → About). Lint, typecheck, build all pass.
-- [x] **Step 6** — Experience timeline (LatSpace, Cognizant, NIT Karnataka) with motion reveal
+- [x] **Step 6** — Experience timeline (Cognizant, NIT Karnataka) with motion reveal
   - Done. `components/sections/experience.tsx` with vertical timeline rail (gradient from primary/50 → border → border), pulsing dot markers (ping animation for `current: true` entries), per-card header (role · company), period + location, "currently" inline badge, ▸-style highlight bullets, and uppercase tracking-wider stack tags.
   - whileInView stagger reveal. All copy sourced from `lib/data/experience.ts`. Typecheck, lint, build all pass.
 - [x] **Step 7** — Skills / stack grid (grouped chips with hover)
@@ -47,19 +47,19 @@ Sections: Hero → About → Experience → Skills → Contact
   - `app/layout.tsx` mounts `<SiteNav />` once at root. `app/globals.css` adds `scroll-behavior: smooth` on html (with `prefers-reduced-motion: reduce` → auto). Typecheck, lint, build all pass.
 - [x] **Step 10** — Polish: page-load stagger, scroll-reveal, prefers-reduced-motion respect
   - Done. `components/shared/scroll-progress.tsx` (fluorescent top progress bar via `useScroll` + spring `scaleX`). `components/shared/site-footer.tsx` (year + socials + back-to-top). `app/not-found.tsx` (terminal-style 404 with `cd ~` button). Mounted via root layout (scroll progress + nav + footer wrap every page).
-  - Content fix: LatSpace is **part-time**, Cognizant is **full-time** and **concurrent**. Added `workMode?: "full-time" | "part-time"` to the `Experience` type, set on both current entries, rendered as a small uppercase mono chip next to the location. Updated `profile.about` ("working part-time as a Founding Engineer at LatSpace…", "Currently full-time at Cognizant…") and `profile.currently` to match.
+  - Content fix: added `workMode?: "full-time" | "part-time"` to the `Experience` type, rendered as a small uppercase mono chip next to the location.
   - Typecheck, lint, build all pass.
 - [x] **Step 11** — Lint + typecheck + dev-server smoke test
   - Done. Production build prerenders `/` and `/_not-found` as static. Smoke test against user's `localhost:3000`:
     - `/` returns HTTP 200, 88KB, all 5 section IDs present (`#top`, `#about`, `#experience`, `#stack`, `#contact`).
     - All key strings rendered: `whoami`, `Nimo`, `Founding Engineer`, `part-time`, `Cognizant`, `LangGraph`, `nihalmohan46`, `Open to interesting work`, `// currently`, `// system info`, `copy`, `hire me`, `Nov 2025`, `Jun 2025`, `full-time`, `part-time`, `thanks for scrolling`.
     - `/nope` returns HTTP 404 (correct status), 31KB, with the `cd ~` button.
-    - `/resume/Nihal_Mohan_Shettigar_Resume_Latest.pdf` returns HTTP 200, 105KB.
+    - `/resume/Nihal_Mohan_Shettigar_Resume.pdf` returns HTTP 200.
   - **Heads up:** your dev server at `localhost:3000` is serving slightly stale content (only 1 `scroll-mt-24` match in HTML, suggesting pre-polish state). Hard-refresh (Cmd/Ctrl+Shift+R) or restart the dev server to pick up the latest changes.
 
 ## Notes
 - No fabricated projects. Only items from the user's 2026 resume.
 - Personal brand: "Nimo" (matches folder name).
 - Placeholder domain in metadata; user will wire real domain later.
-- LatSpace is part-time, Cognizant is full-time (both current, concurrent).
+- Cognizant is full-time.
 - All copy lives in `lib/data/*.ts` for quick edits without touching components.
