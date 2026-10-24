@@ -4,12 +4,12 @@ export const profile: Profile = {
   name: "Nihal Mohan Shettigar",
   handle: "Nimo",
   initials: "NS",
-  role: "Python Engineer",
+  role: "Full Stack Engineer",
   tagline:
     "Python engineer building AI-native backends and agent systems. I ship fast with AI coding tools, and keep it honest with strict types, tests, and code review.",
   location: "Chennai, India",
   email: "nihalmohan46@gmail.com",
-  resumeUrl: "/resume/Nihal_Mohan_Shettigar_Resume.pdf",
+  resumeUrl: "/resume/Nihal_Mohan_Shettigar_Resume_Latest.pdf",
   status: {
     label: "Open to interesting work",
     available: true,
