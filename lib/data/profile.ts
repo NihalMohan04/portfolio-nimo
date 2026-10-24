@@ -49,8 +49,7 @@ export const profile: Profile = {
     { label: "originally from", value: "Mangalore, IN" },
     { label: "timezone", value: "IST (UTC+5:30)" },
     { label: "education", value: "BE AI/ML · NMAMIT · 7.98" },
-    { label: "coffee/day", value: "2-3 cups, black" },
-    { label: "editor", value: "Neovim + Claude Code" },
+    { label: "editor", value: "Zed + Claude Code" },
     { label: "shell", value: "zsh, fish on weekends" },
   ],
 };

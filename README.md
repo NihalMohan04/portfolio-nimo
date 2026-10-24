@@ -41,7 +41,7 @@ Here's everything that went into building this thing. If you're a fellow dev, th
 - **Sticky nav** — fades in a blurred backdrop once you scroll, lights up the link for whichever section you're reading. Built with `IntersectionObserver`, no scroll-jacking.
 - **Scroll progress bar** — a thin fluorescent line across the very top that fills as you read. Spring-animated so it doesn't feel mechanical.
 - **Hero** — a `whoami` command types itself out, then a blinking cursor takes over. The name "Nimo" glows in the primary green.
-- **About** — three bio paragraphs plus a "currently" card and a tiny dl-table of system-info facts (based in, editor, shell, coffee/day, etc.).
+- **About** — three bio paragraphs plus a "currently" card and a tiny dl-table of system-info facts (based in, editor, shell, etc.).
 - **Experience timeline** — vertical rail with gradient, pulsing dots for current roles, `[PART-TIME]` / `[FULL-TIME]` chips for work mode.
 - **Skills grid** — eight grouped cards (Languages, Backend, Frontend, AI & Agents, …). Hover a chip and the border shifts to green with a faint glow.
 - **Contact** — a fake terminal window with a copy-to-clipboard email button (with a fallback for the `execCommand` crowd), social cards, and a `↓ resume.pdf` button.
