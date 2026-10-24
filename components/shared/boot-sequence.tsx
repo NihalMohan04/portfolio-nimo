@@ -139,7 +139,7 @@ export function BootSequence({ onDone }: { onDone?: () => void } = {}) {
       role="status"
       aria-live="polite"
       aria-label="Loading site"
-      className="boot-overlay fixed inset-0 z-[200] flex items-center justify-center bg-background"
+      className="boot-overlay dark fixed inset-0 z-[200] flex items-center justify-center bg-background"
       data-fading={fadingOut}
     >
       {variant === "systemd" ? (

@@ -6,7 +6,7 @@ import { Cursor } from "@/components/shared/cursor";
 import { ScrollProgress } from "@/components/shared/scroll-progress";
 import { SiteFooter } from "@/components/shared/site-footer";
 import { SiteNav } from "@/components/shared/site-nav";
-import { FlickeringGrid } from "@/components/ui/flickering-grid";
+import { ThemedFlickeringGrid } from "@/components/shared/themed-flickering-grid";
 import { site } from "@/lib/data/site";
 
 const geistSans = Geist({
@@ -44,15 +44,20 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${geistSans.variable} ${jetbrainsMono.variable} dark h-full antialiased`}
+      suppressHydrationWarning
     >
       <body className="custom-cursor min-h-full bg-background font-sans text-foreground">
-        <FlickeringGrid
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{document.documentElement.classList.toggle("dark",localStorage.getItem("theme")!=="light")}catch(e){}`,
+          }}
+        />
+        <ThemedFlickeringGrid
           className="bg-grid-mask pointer-events-none fixed inset-0 -z-10"
           squareSize={3}
           gridGap={7}
           flickerChance={0.25}
           maxOpacity={0.14}
-          color="oklch(0.92 0.24 128)"
         />
         <ScrollProgress />
         <Cursor />
