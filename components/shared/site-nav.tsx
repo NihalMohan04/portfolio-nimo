@@ -11,7 +11,7 @@ import { profile } from "@/lib/data/profile";
 import { buttonVariants } from "@/components/ui/button";
 import { SmoothScrollLink } from "@/components/shared/smooth-scroll-link";
 
-const SECTION_IDS = ["about", "experience", "stack", "freetime", "contact"] as const;
+const SECTION_IDS = ["about", "experience", "projects", "stack", "freetime", "contact"] as const;
 type SectionId = (typeof SECTION_IDS)[number];
 
 export function SiteNav() {

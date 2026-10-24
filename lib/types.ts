@@ -54,3 +54,12 @@ export type FreetimeItem = {
   status: string;
   description: string;
 };
+
+export type Project = {
+  name: string;
+  tagline: string;
+  period: string;
+  highlights: string[];
+  stack: string[];
+  href?: string;
+};

@@ -31,7 +31,7 @@ export function Skills() {
       <div className="mx-auto w-full max-w-4xl px-6">
         <SectionHeading
           label="stack"
-          index="03"
+          index="04"
           description="what I work with"
         />
 
