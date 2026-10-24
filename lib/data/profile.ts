@@ -38,7 +38,6 @@ export const profile: Profile = {
   ],
   currently: [
     "Programmer Analyst (full-time) @ Cognizant",
-    "Learning Rust in small doses",
   ],
   facts: [
     { label: "based in", value: "Chennai, IN" },
