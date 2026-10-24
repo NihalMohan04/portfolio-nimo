@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, FileText } from "lucide-react";
 
 import { buttonVariants } from "@/components/ui/button";
+import { ShinyButton } from "@/components/ui/shiny-button";
 import { MagneticText } from "@/components/shared/magnetic-text";
 import { ScrollCue } from "@/components/shared/scroll-cue";
 import { StackMarquee } from "@/components/shared/stack-marquee";
@@ -89,15 +90,14 @@ export function Hero() {
             available={profile.status.available}
             label={profile.status.label}
           />
-          <Link
+          <ShinyButton
             href={profile.resumeUrl}
             target="_blank"
             rel="noreferrer"
-            className={buttonVariants({ variant: "outline", size: "sm" })}
           >
             <FileText aria-hidden className="size-3.5" />
             View resume
-          </Link>
+          </ShinyButton>
           <Link href="#contact" className={buttonVariants({ size: "sm" })}>
             Get in touch
             <ArrowUpRight aria-hidden className="size-3.5" />
