@@ -6,7 +6,7 @@ export const profile: Profile = {
   initials: "NS",
   role: "Python Engineer",
   tagline:
-    "Python engineer building AI-native platforms and enterprise automation. I architect LangGraph agents, async backends, and Next.js frontends — and I like my code typed end-to-end.",
+    "Python engineer building AI-native backends and agent systems. I ship fast with AI coding tools, and keep it honest with strict types, tests, and code review.",
   location: "Chennai, India",
   email: "nihalmohan46@gmail.com",
   resumeUrl: "/resume/Nihal_Mohan_Shettigar_Resume.pdf",
