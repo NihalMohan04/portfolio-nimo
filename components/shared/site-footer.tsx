@@ -15,6 +15,13 @@ export function SiteFooter() {
         </div>
         <div className="flex items-center gap-4 font-mono text-xs text-muted-foreground">
           <Link
+            href="/blog"
+            className="transition-colors hover:text-primary"
+          >
+            blog
+          </Link>
+          <Separator orientation="vertical" className="h-3" />
+          <Link
             href={profile.socials.find((s) => s.label === "GitHub")?.href ?? "#"}
             target="_blank"
             rel="noreferrer"

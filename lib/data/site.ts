@@ -9,6 +9,7 @@ export const site = {
     { label: "About", href: "#about" },
     { label: "Experience", href: "#experience" },
     { label: "Stack", href: "#stack" },
+    { label: "Blog", href: "/blog" },
     { label: "Contact", href: "#contact" },
   ] satisfies NavItem[],
   ascii: {

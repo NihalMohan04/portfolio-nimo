@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
@@ -17,6 +18,10 @@ type SectionId = (typeof SECTION_IDS)[number];
 export function SiteNav() {
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState<SectionId | null>(null);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+  const toHref = (href: string) =>
+    href.startsWith("#") && !isHome ? `/${href}` : href;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -76,10 +81,11 @@ export function SiteNav() {
         )}
       >
         <div className="mx-auto flex h-14 w-full max-w-5xl items-center justify-between gap-4 px-6">
-          <SmoothScrollLink
-            href="#top"
-            className="group inline-flex items-center gap-1.5 font-mono text-sm"
-          >
+          {isHome ? (
+            <SmoothScrollLink
+              href="#top"
+              className="group inline-flex items-center gap-1.5 font-mono text-sm"
+            >
             <span className="text-muted-foreground">~/</span>
             <span className="text-glow font-semibold text-primary transition-opacity group-hover:opacity-90">
               {profile.handle.toLowerCase()}
@@ -88,19 +94,37 @@ export function SiteNav() {
               aria-hidden
               className="ml-0.5 inline-block h-3.5 w-1.5 bg-primary align-middle animate-cursor"
             />
-          </SmoothScrollLink>
+            </SmoothScrollLink>
+          ) : (
+            <Link
+              href="/"
+              className="group inline-flex items-center gap-1.5 font-mono text-sm"
+            >
+            <span className="text-muted-foreground">~/</span>
+            <span className="text-glow font-semibold text-primary transition-opacity group-hover:opacity-90">
+              {profile.handle.toLowerCase()}
+            </span>
+            <span
+              aria-hidden
+              className="ml-0.5 inline-block h-3.5 w-1.5 bg-primary align-middle animate-cursor"
+            />
+            </Link>
+          )}
 
           <nav
             aria-label="Primary"
             className="flex items-center gap-1 sm:gap-2"
           >
             {site.nav.map((item) => {
+              const isBlogLink = item.href === "/blog";
               const id = item.href.replace("#", "") as SectionId;
-              const isActive = active === id;
+              const isActive = isBlogLink
+                ? pathname.startsWith("/blog")
+                : isHome && active === id;
               return (
                 <Link
                   key={item.href}
-                  href={item.href}
+                  href={toHref(item.href)}
                   aria-current={isActive ? "page" : undefined}
                   className={cn(
                     "hidden rounded px-2 py-1 font-mono text-xs transition-colors sm:inline-block",
@@ -115,7 +139,7 @@ export function SiteNav() {
               );
             })}
             <Link
-              href="#contact"
+              href={toHref("#contact")}
               className={cn(
                 buttonVariants({ size: "xs", variant: "default" }),
                 "ml-1",
