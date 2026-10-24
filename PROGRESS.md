@@ -54,7 +54,7 @@ Sections: Hero → About → Experience → Skills → Contact
     - `/` returns HTTP 200, 88KB, all 5 section IDs present (`#top`, `#about`, `#experience`, `#stack`, `#contact`).
     - All key strings rendered: `whoami`, `Nimo`, `Founding Engineer`, `part-time`, `Cognizant`, `LangGraph`, `nihalmohan46`, `Open to interesting work`, `// currently`, `// system info`, `copy`, `hire me`, `Nov 2025`, `Jun 2025`, `full-time`, `part-time`, `thanks for scrolling`.
     - `/nope` returns HTTP 404 (correct status), 31KB, with the `cd ~` button.
-    - `/resume/Nihal_Mohan_Shettigar_Resume.pdf` returns HTTP 200.
+    - `/resume/Nihal_Mohan_Shettigar_Resume_Latest.pdf` returns HTTP 200.
   - **Heads up:** your dev server at `localhost:3000` is serving slightly stale content (only 1 `scroll-mt-24` match in HTML, suggesting pre-polish state). Hard-refresh (Cmd/Ctrl+Shift+R) or restart the dev server to pick up the latest changes.
 
 ## Notes
