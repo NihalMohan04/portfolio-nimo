@@ -64,7 +64,7 @@ export function Hero() {
           custom={0.4}
           className="mt-4 font-mono text-sm text-primary sm:text-base"
         >
-          <span className="text-muted-foreground">role:</span> {profile.role}
+          <span className="text-muted-foreground">open to:</span> {profile.role}
           <span className="text-muted-foreground"> · </span>
           <span className="text-muted-foreground">loc:</span> {profile.location}
         </motion.p>
