@@ -7,7 +7,7 @@ export const profile: Profile = {
   role: "Full Stack Engineer",
   tagline:
     "Python engineer building AI-native backends and agent systems. I ship fast with AI coding tools, and keep it honest with strict types, tests, and code review.",
-  location: "Chennai, India",
+  location: "Mangalore, India",
   email: "nihalmohan46@gmail.com",
   resumeUrl: "/resume/Nihal_Mohan_Shettigar_Resume_Latest.pdf",
   status: {
@@ -39,14 +39,13 @@ export const profile: Profile = {
   about: [
     "I'm a Python engineer who builds backend services and AI agent systems — FastAPI, async Python, MongoDB, and LangGraph-based agents with structured LLM outputs.",
     "I split my time between async backends, multi-provider LLM gateways, and Next.js frontends. I care about typed code, test coverage, and shipping things that don't wake you up at night.",
-    "Currently full-time at Cognizant in Chennai doing SAP data validation, originally from Mangalore, and before that a research intern at NIT Karnataka working on video captioning. BE in AI/ML from NMAM Institute of Technology.",
+    "Currently full-time at Cognizant (Chennai) doing SAP data validation, based in Mangalore, and before that a research intern at NIT Karnataka working on video captioning. BE in AI/ML from NMAM Institute of Technology.",
   ],
   currently: [
     "Programmer Analyst (full-time) @ Cognizant",
   ],
   facts: [
-    { label: "based in", value: "Chennai, IN" },
-    { label: "originally from", value: "Mangalore, IN" },
+    { label: "based in", value: "Mangalore, IN" },
     { label: "timezone", value: "IST (UTC+5:30)" },
     { label: "education", value: "BE AI/ML · NMAMIT · 7.98" },
     { label: "editor", value: "Zed + Claude Code" },

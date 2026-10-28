@@ -151,7 +151,7 @@ That's it. Have fun.
 
 ## About me
 
-**Nihal Mohan Shettigar** — Chennai, originally from Mangalore, working full-time at Cognizant.
+**Nihal Mohan Shettigar** — Mangalore, working full-time at Cognizant (Chennai).
 
 - GitHub: [@NihalMohan04](https://github.com/NihalMohan04)
 - LinkedIn: [/in/nihal-mohan-shettigar](https://linkedin.com/in/nihal-mohan-shettigar)
