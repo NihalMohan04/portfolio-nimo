@@ -4,7 +4,7 @@ export const profile: Profile = {
   name: "Nihal Mohan Shettigar",
   handle: "Nimo",
   initials: "NS",
-  role: "Full Stack Engineer",
+  role: "Full Stack Engineer roles",
   tagline:
     "Python engineer building AI-native backends and agent systems. I ship fast with AI coding tools, and keep it honest with strict types, tests, and code review.",
   location: "Mangalore, India",
