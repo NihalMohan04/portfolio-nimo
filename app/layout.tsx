@@ -20,6 +20,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
   title: site.title,
   description: site.description,
   authors: [{ name: site.author }],
@@ -27,6 +28,8 @@ export const metadata: Metadata = {
     title: site.title,
     description: site.description,
     type: "website",
+    siteName: "Nimo",
+    locale: "en_IN",
   },
   twitter: {
     card: "summary_large_image",
